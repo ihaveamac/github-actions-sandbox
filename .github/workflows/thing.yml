@@ -52,8 +52,8 @@ jobs:
         run: docker images
 
       - name: Python test
-        run: python thing.py ${{ inputs.string }} ${{ inputs.bool }}
+        run: python thing.py ${{ inputs.text }} ${{ inputs.bool }}
 
       - name: Python docker test
-        run: docker run -t --rm -v ${{ github.workspace }}:/app python:3.11-slim python3 /app/thing.py ${{ inputs.string }} ${{ inputs.bool }}
+        run: docker run -t --rm -v ${{ github.workspace }}:/app python:3.11-slim python3 /app/thing.py ${{ inputs.text }} ${{ inputs.bool }}
 
