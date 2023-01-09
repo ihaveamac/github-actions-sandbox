@@ -43,7 +43,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Python test
-        run: docker run -t --rm -v ${{ github.workspace }}:/app python:3.11-alpine python3 /app/thing.py
+        run: docker run -t --rm -v ${{ github.workspace }}:/app python:3.11-slim python3 /app/thing.py
 
       - name: docker test
         run: docker images
