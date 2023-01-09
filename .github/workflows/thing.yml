@@ -45,3 +45,6 @@ jobs:
       - name: Python test
         run: docker run -t --rm -v ${{ github.workspace }}:/app python:3.11-alpine python3 /app/thing.py
 
+      - name: docker test
+        run: docker images
+
