@@ -17,6 +17,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
+    name: "Build job"
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -42,5 +43,5 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Python test
-        run: docker run -t --rm -v ${{ github.workspace }}:/app python:3.11-alpine /app/thing.py
+        run: docker run -t --rm -v ${{ github.workspace }}:/app python:3.11-alpine python3 /app/thing.py
 
